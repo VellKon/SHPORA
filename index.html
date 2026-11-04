@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHPORA — Экспресс-шпаргалка: Python & ООП</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Sticky Header & Search Area -->
+  <header class="header-wrapper">
+    <div class="header-top">
+      <div class="logo-area">
+        <div class="logo-title">
+          <span>SHPORA</span>
+        </div>
+      </div>
+
+      <div class="header-stats">
+        <span>Всего: <b id="totalCount">100</b></span>
+        <span>•</span>
+        <span>Теория: <b id="theoryCount">60</b></span>
+        <span>•</span>
+        <span>Практика: <b id="practiceCount">40</b></span>
+      </div>
+
+      <div class="header-actions">
+        <button id="btnExpandAll" class="btn-icon" title="Развернуть все ответы">Развернуть всё</button>
+        <button id="btnCollapseAll" class="btn-icon" title="Свернуть все ответы">Свернуть всё</button>
+        <button id="btnToggleTheme" class="btn-icon" title="Переключить тему">Светлая</button>
+      </div>
+    </div>
+
+    <!-- Search Input Bar -->
+    <div class="search-container">
+      <div class="search-box">
+        <span class="search-icon">⚲</span>
+        <input 
+          type="text" 
+          id="searchInput" 
+          class="search-input" 
+          placeholder="Поиск: номер (25, п14), термин (flask, init, геттер, singleton)..." 
+          autocomplete="off" 
+          autofocus
+        >
+        <button id="searchClear" class="search-clear" title="Очистить поиск">✕</button>
+        <span class="search-shortcut" title="Нажмите / для быстрого перехода в поиск">/</span>
+      </div>
+    </div>
+
+    <!-- Fast Category Chips -->
+    <nav class="filters-bar" aria-label="Быстрые фильтры">
+      <button class="filter-chip active" data-filter="all">Все (100)</button>
+      <button class="filter-chip chip-gold" data-filter="bank">BankAccount</button>
+      <button class="filter-chip" data-filter="theory">Теория (60)</button>
+      <button class="filter-chip" data-filter="practice">Практика (40)</button>
+      <button class="filter-chip" data-filter="sec-1">1. Основы</button>
+      <button class="filter-chip" data-filter="sec-2">2. Файлы</button>
+      <button class="filter-chip" data-filter="sec-3">3. ООП Основы</button>
+      <button class="filter-chip" data-filter="sec-4">4. Наследование</button>
+      <button class="filter-chip" data-filter="sec-5">5. Исключения</button>
+      <button class="filter-chip" data-filter="sec-6">6. GUI / DB / Web</button>
+      <button class="filter-chip" data-filter="sec-7">7. Расширенный ООП</button>
+      <button class="filter-chip" data-filter="sec-8">8. Проектирование</button>
+      <button class="filter-chip" data-filter="sec-9">9. Обобщение</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-content">
+
+    <!-- TOP PINNED BLOCK (BankAccount) - MUST BE FIRST ABOVE ALL QUESTIONS -->
+    <section class="pinned-block" id="pinnedBlock">
+      <div class="pinned-header" id="pinnedHeader" title="Нажмите, чтобы развернуть или скрыть код">
+        <div class="pinned-title-wrap">
+          <span class="pinned-badge">Код</span>
+          <h2 class="pinned-title">Класс BankAccount (pay, withdraw, transfer)</h2>
+        </div>
+        <div class="pinned-actions" onclick="event.stopPropagation()">
+          <button id="btnCopyPinned" class="btn-copy-main" title="Скопировать без открытия">
+            Копировать код
+          </button>
+          <button id="btnTogglePinned" class="btn-toggle-pinned">
+            <span id="pinnedToggleText">Показать</span> <span id="pinnedChevron">▼</span>
+          </button>
+        </div>
+      </div>
+      <div class="code-container" id="pinnedCodeContainer">
+        <pre><code id="pinnedCodeBlock" class="code-block"></code></pre>
+      </div>
+    </section>
+
+    <!-- Dynamic Cards Container for Theory & Practice -->
+    <section id="cardsContainer" aria-live="polite">
+      <!-- Generated via app.js -->
+    </section>
+
+  </main>
+
+  <!-- Floating Scroll-to-Top Button -->
+  <div class="quick-floating-bar">
+    <button id="btnScrollTop" class="btn-float" title="Наверх">↑</button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
