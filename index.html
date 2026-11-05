@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHPORA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="header-wrapper">
+    <div class="header-top">
+      <div class="logo-area">
+        <span class="logo-title">SHPORA</span>
+      </div>
+    </div>
+
+    <!-- Search Input Bar -->
+    <div class="search-container">
+      <div class="search-box">
+        <input 
+          type="text" 
+          id="searchInput" 
+          class="search-input" 
+          placeholder="поиск...." 
+          autocomplete="off" 
+          autofocus
+        >
+        <button id="searchClear" class="search-clear" title="Очистить">✕</button>
+      </div>
+    </div>
+
+    <!-- Fast Category Chips -->
+    <nav class="filters-bar" aria-label="Быстрые фильтры">
+      <button class="filter-chip active" data-filter="all">Все</button>
+      <button class="filter-chip" data-filter="bank">BankAccount</button>
+      <button class="filter-chip" data-filter="theory">Теория</button>
+      <button class="filter-chip" data-filter="practice">Практика</button>
+      <button class="filter-chip" data-filter="sec-1">1. Основы</button>
+      <button class="filter-chip" data-filter="sec-2">2. Файлы</button>
+      <button class="filter-chip" data-filter="sec-3">3. ООП Основы</button>
+      <button class="filter-chip" data-filter="sec-4">4. Наследование</button>
+      <button class="filter-chip" data-filter="sec-5">5. Исключения</button>
+      <button class="filter-chip" data-filter="sec-6">6. GUI / DB / Web</button>
+      <button class="filter-chip" data-filter="sec-7">7. Расширенный ООП</button>
+      <button class="filter-chip" data-filter="sec-8">8. Проектирование</button>
+      <button class="filter-chip" data-filter="sec-9">9. Обобщение</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-content">
+
+    <!-- TOP PINNED BLOCK (BankAccount) -->
+    <section class="pinned-block" id="pinnedBlock">
+      <div class="pinned-header" id="pinnedHeader" title="Нажмите, чтобы развернуть или скрыть">
+        <div class="pinned-title-wrap">
+          <span class="pinned-badge">Код</span>
+          <h2 class="pinned-title">Класс BankAccount (pay, withdraw, transfer)</h2>
+        </div>
+        <div class="pinned-actions" onclick="event.stopPropagation()">
+          <button id="btnCopyPinned" class="btn-action" title="Скопировать код">
+            Копировать
+          </button>
+          <button id="btnDownloadPinned" class="btn-action btn-action-subtle" title="Скачать .txt">
+            TXT
+          </button>
+          <button id="btnTogglePinned" class="btn-action btn-action-subtle">
+            <span id="pinnedToggleText">Показать</span> <span id="pinnedChevron">▼</span>
+          </button>
+        </div>
+      </div>
+      <div class="code-container" id="pinnedCodeContainer">
+        <pre><code id="pinnedCodeBlock" class="code-block"></code></pre>
+      </div>
+    </section>
+
+    <!-- Cards Container for Theory & Practice -->
+    <section id="cardsContainer" aria-live="polite">
+      <!-- Generated via app.js -->
+    </section>
+
+  </main>
+
+  <!-- Floating Scroll-to-Top Button -->
+  <div class="quick-floating-bar">
+    <button id="btnScrollTop" class="btn-float" title="Наверх">↑</button>
+  </div>
+
+  <!-- Scripts: 100% Client-side, works directly on GitHub Pages -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
